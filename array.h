@@ -22,8 +22,8 @@ class matrix
 
     public:
         matrix();
-        matrix(int row,int col)
+        matrix(int row,int col);
         void takeinp();
-        matrix addmat(matrix mat)
+        matrix addmat(matrix mat);
         void displaymat();
 };
