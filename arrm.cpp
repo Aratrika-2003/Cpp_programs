@@ -29,15 +29,16 @@ int main()
     cin >> row >> col;
     matrix m1(row,col);
     matrix m2(row,col);
-	matrix m3(row,col);
+    matrix m3(row,col);
 	
-	m1.takeinp();
-	m1.display();
+    m1.takeinp();
+    m1.display();
 	
-	m2.takeimp();
-	m2.display();
+    m2.takeinp();
+    m2.display();
 	
-	m3 = m1.add(m2);
-	m3.display();
+    m3 = m1.addmat(m2);
+    m3.displaymat();
+	
     return 0;
 }
