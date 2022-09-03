@@ -95,34 +95,3 @@ matrix matrix::addmat(matrix mat)
     return res;
 }
 
-/*array array :: operator+(const array &ob)
-{
-    for(int i = 0; i < size; i++)
-    {
-        this->arr[i] = this->arr[i] + ob.arr[i];
-    }
-    return *this;
-}
-
-ostream &operator<<(ostream &out,const array &ob)
-{
-    out << "The elements of array " << endl;
-    for(int i = 0; i < ob.size; i++)
-    {
-        out << ob.arr[i] << " ";
-    }
-    out << endl;
-
-    return out;
-}
-
-istream &operator>>(istream &in,const array &ob)
-{
-    for(int i = 0; i < ob.size; i++)
-    {
-        cout << "enter the elements at " << i << "th position";
-        in >> ob.arr[i];
-    }
-
-    return in;
-}*/
