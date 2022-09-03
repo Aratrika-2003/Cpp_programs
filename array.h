@@ -24,6 +24,6 @@ class matrix
         matrix();
         matrix(int row,int col)
         void takeinp();
-        matrix add(matrix mat)
+        matrix addmat(matrix mat)
         void displaymat();
 };
