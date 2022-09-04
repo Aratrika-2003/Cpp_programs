@@ -3,7 +3,7 @@
 int main()
 {
     /*array*/
-    int sizearr;
+    int sizearr,row,col;
 
     cout << "Enter the size of array";
     cin >> sizearr;
@@ -32,10 +32,10 @@ int main()
     matrix m3(row,col);
 	
     m1.takeinp();
-    m1.display();
+    m1.displaymat();
 	
     m2.takeinp();
-    m2.display();
+    m2.displaymat();
 	
     m3 = m1.addmat(m2);
     m3.displaymat();
