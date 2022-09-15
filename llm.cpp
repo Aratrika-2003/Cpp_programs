@@ -3,7 +3,7 @@
 int main()
 {
     LinkedList sll;
-    node n(60);
+    node n(60),*val, *pos;
 
     sll.append(0);
     sll.append(2);
@@ -18,7 +18,7 @@ int main()
 
     cout << endl;
 
-    //sll.delnode();
+    sll.delnode();
     // sll.delnode();
     // sll.delnode();
     // sll.delnode();
@@ -31,8 +31,13 @@ int main()
     cout << "Linked list after reversing" << " ";
     sll.traverse();
 
-    sll.searchpos(4);
-    sll.searchval(12);
+    cout << endl;
+
+    pos = sll.searchpos(4);
+    val = sll.searchval(12);
+
+    cout << "Value after searching by position: " << *pos << endl;
+    cout << "Value after searching by value: " << *val << endl;
 
     sll.inssort();
 
