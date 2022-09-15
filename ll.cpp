@@ -99,41 +99,54 @@ void LinkedList :: reverse()//reversing the linked list
 
 node* LinkedList :: searchpos(item pos)
 {
-    int i = 1, count = 1;
+    node *curr = head,*temp = head;
+    int i, count = 0;
+
     if(head == NULL)
     {
         cout << "Linked list is empty ";
         return NULL;
     }
+    
     if(pos <= 0)
     {
         cout << "invalid position entered! ";
         return NULL;
     }
-    for(i = 0; i < pos; i++)
+
+    while(temp != NULL)
     {
-        head = head->next;
+        count++;
+        temp = temp->next;
     }
-    return head;
+
+    if(pos > count)
+    {
+        cout << "invalid position entered! ";
+        return NULL;
+    }
+
+    for(i = 0; i < pos-1; i++)
+    {
+        curr = curr->next;
+    }
+    return curr;
 }
 
 node* LinkedList :: searchval(item val)
 {
-    int i = 1, count = 1;
+    node *curr = head;
     if(head == NULL)
     {
         cout << "Linked list is empty ";
         return NULL;
     }
-    while(head->next != NULL)
+    
+    while(curr->data != val)
     {
-        if(head->data == val)
-        {
-            return head;
-        }
-        head = head->next;
+        curr = curr->next;
     }
-    return head;
+    return curr;
 }
 
 void LinkedList :: inssort()
@@ -145,31 +158,30 @@ void LinkedList :: inssort()
 
     curr = head->next;
     prev = head;
-    while(curr != NULL)
+    
+    while(curr!=NULL)
     {
         a = NULL;
         b = head;
-        while(b->data < curr->data && b->next != curr)
+        while(b->data < curr->data && b != curr)
         {
             a = b;
             b = b->next;
         }
-        /*to be inserted between p and q*/
-        if(b != curr->next)
+        if(b != curr)
         {
             prev->next = curr->next;
             curr->next = b;
-
             if(a == NULL)
+            {
                 head = curr;
-
+            }
             else
-            { 
-                b->next = curr;
+            {
+                a->next = curr;
             }
             curr = prev->next;
         }
-    /*hcurr is placed in its position*/
         else
         {
             prev = curr;
@@ -177,6 +189,7 @@ void LinkedList :: inssort()
         }
     }
 }
+
 
 ostream& operator<<(ostream& out,const LinkedList& ob)
 {
